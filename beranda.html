@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXA - Pendaftaran Mahasiswa Baru</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="beranda.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div class="logo-text">
+                    <span>NEXA</span>
+                    <span>Pendaftaran Mahasiswa Baru</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="beranda.html" class="active" style="border-bottom: 2px solid #fff; padding-bottom: 5px;">Beranda</a></li>
+                
+                <!-- Menu Informasi dengan Dropdown Interaktif -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" id="dropdownBtn">
+                        Informasi <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+                    </a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="#">Tentang Kampus</a></li>
+                        <li><a href="#">Fasilitas</a></li>
+                        <li><a href="#">Akreditasi</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Alur Pendaftaran</a></li>
+                <li><a href="#">Jadwal</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+            
+            <!-- Mengarah ke pendaftaran.html -->
+            <button class="btn-login" onclick="window.location.href='pilih_jalur.html'">
+    <i class="fa-regular fa-user"></i> Masuk / Daftar
+</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fa-solid fa-graduation-cap"></i> Knowledge Meets Innovation
+                </div>
+                <h1 class="hero-title">Wujudkan Masa Depan Bersama Kami</h1>
+                <p class="hero-desc">Bergabunglah bersama ribuan calon mahasiswa untuk meraih pendidikan berkualitas dan masa depan yang gemilang.</p>
+                <div class="hero-buttons">
+                    <!-- Mengarah ke pendaftaran.html -->
+                    <button class="btn-primary" onclick="window.location.href='pilih_jalur.html'">Daftar Sekarang <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn-outline">Informasi Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Card -->
+        <div class="registration-card">
+            <div class="registration-card-header">
+                <div class="icon">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </div>
+                <h3>Pendaftaran Telah Dibuka!</h3>
+            </div>
+            <p>Periode Pendaftaran</p>
+            <div class="date">01 Mei 2025 –<br>30 Juni 2025</div>
+            <button class="btn-light">Lihat Jadwal</button>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-wrapper">
+        <div class="stat-item">
+            <i class="fa-solid fa-users"></i>
+            <div class="stat-text">
+                <h4>2.450+</h4>
+                <p>Pendaftar</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-building-columns"></i>
+            <div class="stat-text">
+                <h4>12</h4>
+                <p>Program Studi</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="stat-text">
+                <h4>850+</h4>
+                <p>Lulus Seleksi</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-trophy"></i>
+            <div class="stat-text">
+                <h4>95%</h4>
+                <p>Tingkat Kepuasan</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Programs Section -->
+    <section class="programs-section container">
+        <div class="section-header">
+            <h2>Program Studi Unggulan</h2>
+            <a href="#" class="link-all">Lihat Semua Program Studi <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        
+        <div class="programs-grid">
+            <!-- Card 1 -->
+            <div class="program-card">
+                <div class="program-icon" style="background-color: #4a1011;">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h4>Teknik Informatika</h4>
+                <p>Fakultas Teknik</p>
+                <button class="btn-detail">Lihat Detail</button>
+            </div>
+            <!-- Card 2 -->
+            <div class="program-card">
+                <div class="program-icon" style="background-color: #1a365d;">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <h4>Sistem Informasi</h4>
+                <p>Fakultas Teknik</p>
+                <button class="btn-detail">Lihat Detail</button>
+            </div>
+            <!-- Card 3 -->
+            <div class="program-card">
+                <div class="program-icon" style="background-color: #dd6b20;">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h4>Manajemen</h4>
+                <p>Fakultas Ekonomi</p>
+                <button class="btn-detail">Lihat Detail</button>
+            </div>
+            <!-- Card 4 -->
+            <div class="program-card">
+                <div class="program-icon" style="background-color: #553c9a;">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h4>Psikologi</h4>
+                <p>Fakultas Psikologi</p>
+                <button class="btn-detail">Lihat Detail</button>
+            </div>
+            <!-- Card 5 -->
+            <div class="program-card">
+                <div class="program-icon" style="background-color: #2b6cb0;">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <h4>Ilmu Komunikasi</h4>
+                <p>Fakultas Ilmu Sosial</p>
+                <button class="btn-detail">Lihat Detail</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="container">
+        <div class="why-us-section">
+            <div class="why-us-text">
+                <h2>Mengapa Memilih Kami?</h2>
+                <p>Kami berkomitmen memberikan pendidikan terbaik dengan fasilitas modern dan tenaga pengajar profesional.</p>
+            </div>
+            
+            <div class="why-us-features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="feature-text">
+                        <h4>Dosen Profesional</h4>
+                        <p>Tenaga pengajar berpengalaman</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="feature-text">
+                        <h4>Fasilitas Modern</h4>
+                        <p>Sarana belajar lengkap dan terkini</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="feature-text">
+                        <h4>Lingkungan Nyaman</h4>
+                        <p>Kampus hijau dan kondusif</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <div class="feature-text">
+                        <h4>Peluang Karir</h4>
+                        <p>Jaringan luas dan peluang karir terbaik</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="why-us-video">
+                <div class="play-btn">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <span style="position: absolute; bottom: 10px; right: 10px; font-size: 10px; background: rgba(0,0,0,0.6); padding: 4px 8px; border-radius: 4px;">Video Profil</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo footer-logo">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 32px;"></i>
+                        <div class="logo-text">
+                            <span style="font-size: 24px;">NEXA</span>
+                            <span style="font-size: 12px; color: #999;">Pendaftaran Mahasiswa Baru</span>
+                        </div>
+                    </div>
+                    <p>Bersama kami, wujudkan masa depan cerah melalui pendidikan berkualitas dan inovasi tanpa batas.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Diubah dari Toko menjadi Menu Utama -->
+                <div class="footer-col">
+                    <h4>Menu Utama</h4>
+                    <ul>
+                        <li><a href="beranda.html">Beranda</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                        <li><a href="#">Program Studi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Informasi</h4>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Alur Pendaftaran</h4>
+                    <ul>
+                        <li><a href="#">Cara Pendaftaran</a></li>
+                        <li><a href="#">Persyaratan</a></li>
+                        <li><a href="#">Jadwal Seleksi</a></li>
+                        <li><a href="#">Pengumuman</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kontak</h4>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-phone"></i> WhatsApp: +62 889-0504-7384</li>
+                        <li><i class="fa-solid fa-envelope"></i> Email: info@nexakampus.ac.id</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Jl. Pendidikan No. 1, Kota Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2026 NEXA Kampus. All rights reserved.
+                <div class="scroll-top" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Dropdown Informasi -->
+    <script>
+        const dropdownBtn = document.getElementById('dropdownBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('show');
+        });
+
+        window.addEventListener('click', function() {
+            if (dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

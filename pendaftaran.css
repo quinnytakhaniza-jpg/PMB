@@ -1,0 +1,110 @@
+:root {
+    --primary: #4a1011;
+    --primary-hover: #360a0a;
+    --bg-light: #fdfaf6;
+    --text-dark: #1a1a1a;
+    --text-gray: #666666;
+    --white: #ffffff;
+    --border-color: #e5e5e5;
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg-light); 
+    color: var(--text-dark);
+    margin: 0; 
+    padding: 40px 20px; 
+}
+
+.container { 
+    max-width: 550px; 
+    background: var(--white); 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+    margin: auto; 
+    border-top: 5px solid var(--primary);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+h2 { 
+    font-family: 'Playfair Display', serif;
+    text-align: center; 
+    color: var(--primary); 
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.form-group { 
+    margin-bottom: 20px; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 8px; 
+    color: var(--text-dark); 
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input, select { 
+    width: 100%; 
+    padding: 12px 15px; 
+    border: 1px solid var(--border-color); 
+    border-radius: 6px; 
+    box-sizing: border-box; 
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    background-color: #fafafa;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--white);
+}
+
+button[type="submit"] { 
+    width: 100%; 
+    padding: 14px; 
+    background-color: var(--primary); 
+    color: var(--white); 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 15px; 
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover { 
+    background-color: var(--primary-hover); 
+}
+
+.error { 
+    color: #dc3545; 
+    font-size: 0.8em; 
+    display: none; 
+    margin-top: 5px;
+}

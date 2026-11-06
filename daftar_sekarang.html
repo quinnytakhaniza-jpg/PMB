@@ -1,0 +1,64 @@
+<?php
+// Konfigurasi Kredensial Database
+$host = "localhost";
+$user = "root"; 
+$pass = "";     
+$db   = "pmb_db"; 
+
+// Membuat Koneksi ke Database
+$conn = new mysqli($host, $user, $pass, $db);
+
+// Cek apakah koneksi berhasil
+if ($conn->connect_error) {
+    die("Koneksi ke database gagal: " . $conn->connect_error);
+}
+
+// Mengecek apakah form sudah disubmit melalui metode POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Menangkap data dari form input
+    $nama    = $_POST['nama'] ?? '';
+    $email   = $_POST['email'] ?? '';
+    $telepon = $_POST['telepon'] ?? '';
+    $jurusan = $_POST['jurusan'] ?? '';
+
+    // Validasi input tidak boleh kosong
+    if (!empty($nama) && !empty($email) && !empty($telepon) && !empty($jurusan)) {
+        
+        // Menyiapkan query menggunakan Prepared Statement
+        $sql = "INSERT INTO calon_mahasiswa (nama_lengkap, email, telepon, jurusan) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        // Cek apakah prepare berhasil
+        if ($stmt === false) {
+            die("Error pada kueri SQL: " . $conn->error);
+        }
+
+        $stmt->bind_param("ssss", $nama, $email, $telepon, $jurusan);
+
+        // Mengeksekusi query dan mengarahkan ke dashboard sukses jika berhasil
+        if ($stmt->execute()) {
+            echo "<script>
+                    window.location.href = 'dashboard.php';
+                  </script>";
+        } else {
+            echo "<script>
+                    alert('Gagal menyimpan ke database: " . $stmt->error . "');
+                    window.location.href = 'pendaftaran.html';
+                  </script>";
+        }
+
+        $stmt->close();
+    } else {
+        echo "<script>
+                alert('Semua kolom wajib diisi!');
+                window.location.href = 'pendaftaran.html';
+              </script>";
+    }
+} else {
+    header("Location: pendaftaran.html");
+    exit();
+}
+
+$conn->close();
+?>

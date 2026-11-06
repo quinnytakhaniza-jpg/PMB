@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran - NEXA</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="pendaftaran.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="pilih_jalur.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Kembali ke Pilih Jalur</a>
+        <h2>Formulir Pendaftaran</h2>
+        <p class="subtitle">Silakan isi data diri Anda dengan benar untuk mendaftar.</p>
+        
+        <form id="formDaftar" action="daftar_sekarang.php" method="POST" onsubmit="return validasiForm()">
+            <!-- Input tersembunyi untuk menangkap jalur pendaftaran -->
+            <input type="hidden" id="jalur" name="jalur" value="">
+
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap sesuai ijazah" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Alamat Email Aktif</label>
+                <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="telepon">Nomor WhatsApp / Telepon</label>
+                <input type="text" id="telepon" name="telepon" placeholder="Contoh: 08123456789" required>
+                <div id="errorTelepon" class="error">Nomor telepon harus berupa angka!</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="jurusan">Pilihan Program Studi (Jurusan)</label>
+                <select id="jurusan" name="jurusan" required>
+                    <option value="">-- Pilih Program Studi --</option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Manajemen">Manajemen</option>
+                    <option value="Psikologi">Psikologi</option>
+                    <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+                    <option value="Kepelatihan Olahraga">Kepelatihan Olahraga</option>
+                </select>
+            </div>
+            
+            <button type="submit">Kirim Pendaftaran Sekarang</button>
+        </form>
+    </div>
+
+    <script>
+        // Mengambil parameter jalur dari URL secara otomatis
+        const urlParams = new URLSearchParams(window.location.search);
+        const jalurPilihan = urlParams.get('jalur') || 'Umum';
+        document.getElementById('jalur').value = jalurPilihan;
+
+        function validasiForm() {
+            const telepon = document.getElementById('telepon').value;
+            const errorTelepon = document.getElementById('errorTelepon');
+
+            if (isNaN(telepon)) {
+                errorTelepon.style.display = 'block';
+                return false; 
+            }
+            errorTelepon.style.display = 'none';
+            return true; 
+        }
+    </script>
+</body>
+</html>
